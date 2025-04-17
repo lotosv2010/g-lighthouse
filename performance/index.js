@@ -28,7 +28,7 @@ const launchChromeAndRunLighthouse = async (url, opts, config = undefined) => {
   // 生成报告
   const report = results?.report;
   console.log(report);
-  await writeFile(path.join(__dirname, 'reports', `${dayjs().format('YYYY-MM-DD_HH-mm-SS')}report.html`), report);
+  await writeFile(path.join(__dirname, 'reports', `${dayjs().format('YYYY-MM-DD_HH-mm-ss')}-report.html`), report);
   return report;
 }
 
