@@ -18,7 +18,14 @@ app.use((req, _res, next) => {
 })
 
 app.use(compression());
-app.use(express.static('public'))
+
+function setHeaders(res, path) {
+  // res.setHeader('cache-control', 'no-cache')
+}
+
+app.use(express.static('public', {
+  setHeaders
+}))
 
 
 app.listen(9090, () => {
