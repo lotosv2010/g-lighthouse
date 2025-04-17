@@ -1,0 +1,32 @@
+{
+  "name": "g-lighthouse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lighthouse": "lighthouse http://localhost:9090 --locale zh --quiet --chrome-flags='--headless' --only-categories=performance",
+    "dev": "nodemon ./performance/index.js",
+    "website": "cd ./website && nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lotosv2010/g-lighthouse.git"
+  },
+  "keywords": [],
+  "author": "Robin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lotosv2010/g-lighthouse/issues"
+  },
+  "homepage": "https://github.com/lotosv2010/g-lighthouse#readme",
+  "packageManager": "pnpm@10.5.2",
+  "dependencies": {
+    "chrome-launcher": "^0.15.0",
+    "compression": "^1.8.0",
+    "dayjs": "^1.11.13",
+    "express": "^5.1.0",
+    "lighthouse": "^9.2.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {}
+}
