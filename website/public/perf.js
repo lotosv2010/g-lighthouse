@@ -13,9 +13,10 @@
   const data = {
     FP: 0,  // 首次绘制
     FCP: 0, // 首次内容绘制
+    LCP: 0, // 首次布局绘制
   }
 
-  // 如果观察者观察到了指定类型的性能条目，就执行回调
+  // FP & FCP: 如果观察者观察到了指定类型的性能条目，就执行回调
   new PerformanceObserver((entryList, observer) => {
     const entries = entryList.getEntries();
     entries.forEach(entry => {
@@ -32,4 +33,15 @@
 
     observer.disconnect();
   }).observe({ type: 'paint', buffered: true })
+  // LCP
+  new PerformanceObserver((entryList, observer) => {
+    const entries = entryList.getEntries();
+    entries.forEach(entry => {
+      if(entry.startTime > data.LCP) {
+        data.LCP = entry.startTime;
+        console.log('记录最大内容绘制(LCP)', data.LCP);
+      }
+    });
+    observer.disconnect();
+  }).observe({ type: 'largest-contentful-paint', buffered: true })
 });
