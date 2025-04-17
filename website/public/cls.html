@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lighthouse</title>
+  <link rel="dns-prefetch" href="//static.360buyimg.com" />
+  <style>
+    @keyframes grow {
+      from {
+        /* height: 0px; */
+        transform: scaleY(0);
+      }
+      to {
+        /* height: 400px; */
+        transform: scaleY(1);
+      }
+    }
+    img{
+      width: 100vw;
+      height: 200px;
+    }
+    #lighthouse {
+      animation: grow 2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">Lighthouse</div>
+  <img id="banner" style="width:500px;height:300px;" src="/1.png" /><br />
+  <img src="https://cdn.wekic.com/_blog/1644215774879-image.png" />
+  <img id="lighthouse" src="/lighthouse.png" />
+  <script src="./perf.js"></script>
+</body>
+</html>
